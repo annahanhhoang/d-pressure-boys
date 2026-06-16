@@ -32,24 +32,38 @@ export function Reviews() {
           <h2>What Customers Say</h2>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6">
-          {reviews.map((r) => (
-            <div key={r.id} className="bg-card border border-border rounded-2xl p-7 flex flex-col gap-4">
-              <div className="flex gap-0.5">
+        <ul className="grid md:grid-cols-3 gap-6 list-none p-0">
+          {reviews.map(r => (
+            <li
+              key={r.id}
+              className="bg-card border border-border rounded-2xl p-7 flex flex-col gap-4"
+            >
+              {/* Stars are decorative; rating communicated via aria-label */}
+              <div className="flex gap-0.5" role="img" aria-label={`${r.rating} out of 5 stars`}>
                 {Array.from({ length: r.rating }).map((_, i) => (
-                  <Star key={i} size={15} className="text-yellow-400 fill-yellow-400" />
+                  <Star
+                    key={i}
+                    size={15}
+                    className="text-yellow-500 fill-yellow-500"
+                    aria-hidden="true"
+                  />
                 ))}
               </div>
-              <p className="text-muted-foreground text-sm leading-relaxed flex-1">"{r.text}"</p>
-              <div className="flex items-center gap-3 pt-2 border-t border-border">
-                <div className="w-9 h-9 rounded-full bg-primary/20 flex items-center justify-center text-primary font-semibold text-sm">
+              <blockquote className="text-foreground text-sm leading-relaxed flex-1 m-0">
+                "{r.text}"
+              </blockquote>
+              <footer className="flex items-center gap-3 pt-2 border-t border-border">
+                <div
+                  className="w-9 h-9 rounded-full bg-primary/15 flex items-center justify-center text-primary font-semibold text-sm"
+                  aria-hidden="true"
+                >
                   {r.name[0]}
                 </div>
-                <span className="text-sm font-medium">{r.name}</span>
-              </div>
-            </div>
+                <cite className="text-sm font-medium not-italic">{r.name}</cite>
+              </footer>
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
     </section>
   );

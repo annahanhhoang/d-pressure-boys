@@ -1,7 +1,7 @@
 import { Star, Award, Heart } from 'lucide-react';
 import { Chip } from '@/app/components/Chip';
-import { ImageWithFallback } from '@/app/components/ImageWithFallback';
-import ownersPhoto from '@/assets/owners-photo.jpg';
+import ImageWithFallback from '@/app/components/ImageWithFallback';
+import ownersPhoto from '@/assets/owners-photo.webp';
 
 export function About() {
   const values = [
@@ -19,6 +19,10 @@ export function About() {
             <ImageWithFallback
               src={ownersPhoto}
               alt="Donavan Tran and Kip Killough, owners of D Pressure Boys"
+              width={450}
+              height={600}
+              loading="lazy"
+              decoding="async"
               className="block relative z-1 w-full h-full max-h-[520px] object-cover object-top rounded-xl"
             />
             <div className="absolute z-2 -bottom-5 right-6 bg-accent text-accent-foreground text-barlow rounded-xl px-5 py-3 shadow-lg">

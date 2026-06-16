@@ -41,8 +41,9 @@ export function Navbar({ dark, onToggleTheme }: NavbarProps) {
           <a
             href="tel:6573429683"
             className="flex items-center gap-1.5 text-sm font-medium text-primary hover:opacity-80 transition-opacity"
+            aria-label="Call us at 657-342-9683"
           >
-            <Phone size={14} />
+            <Phone size={14} aria-hidden="true" />
             657-342-9683
           </a>
           <button
@@ -51,9 +52,9 @@ export function Navbar({ dark, onToggleTheme }: NavbarProps) {
             className="w-9 h-9 rounded-full bg-secondary flex items-center justify-center hover:opacity-80 transition-opacity"
           >
             {dark ? (
-              <Sun size={16} className="text-primary" />
+              <Sun size={16} className="text-primary" aria-hidden="true" />
             ) : (
-              <Moon size={16} className="text-muted-foreground" />
+              <Moon size={16} className="text-muted-foreground" aria-hidden="true" />
             )}
           </button>
         </div>
@@ -65,27 +66,37 @@ export function Navbar({ dark, onToggleTheme }: NavbarProps) {
             className="w-9 h-9 rounded-full bg-secondary flex items-center justify-center"
           >
             {dark ? (
-              <Sun size={16} className="text-primary" />
+              <Sun size={16} className="text-primary" aria-hidden="true" />
             ) : (
-              <Moon size={16} className="text-muted-foreground" />
+              <Moon size={16} className="text-muted-foreground" aria-hidden="true" />
             )}
           </button>
           <button
             onClick={() => setMenuOpen(o => !o)}
             aria-label="Toggle navigation menu"
+            aria-expanded={menuOpen}
+            aria-controls="mobile-menu"
             className="w-9 h-9 flex items-center justify-center"
           >
-            {menuOpen ? <X size={20} /> : <Menu size={20} />}
+            {menuOpen ? (
+              <X size={20} aria-hidden="true" />
+            ) : (
+              <Menu size={20} aria-hidden="true" />
+            )}
           </button>
         </div>
       </nav>
 
       {menuOpen && (
-        <div className="md:hidden bg-background border-b border-border px-5 pb-4 flex flex-col gap-3">
+        <div
+          id="mobile-menu"
+          className="md:hidden bg-background border-b border-border px-5 pb-4 flex flex-col gap-3"
+          role="navigation"
+          aria-label="Mobile navigation"
+        >
           {navLinks.map(l => (
             <button
               key={l.id}
-              aria-label={`mobile nav bar ${l.label}`}
               onClick={() => scrollTo(l.id)}
               className="text-left text-sm font-medium text-muted-foreground hover:text-foreground transition-colors py-1"
             >
@@ -95,8 +106,9 @@ export function Navbar({ dark, onToggleTheme }: NavbarProps) {
           <a
             href="tel:6573429683"
             className="flex items-center gap-1.5 text-sm font-medium text-primary py-1"
+            aria-label="Call us at 657-342-9683"
           >
-            <Phone size={14} />
+            <Phone size={14} aria-hidden="true" />
             657-342-9683
           </a>
         </div>

@@ -1,5 +1,5 @@
 import { CheckCircle2, LucideProps } from 'lucide-react';
-import { ImageWithFallback } from '@/app/components/ImageWithFallback';
+import ImageWithFallback from '@/app/components/ImageWithFallback';
 
 interface ServiceCardProps {
   imgSrc: string;
@@ -39,15 +39,18 @@ export function ServiceCard({
         />
       </div>
       <div className="p-8 text-muted-foreground">
-        <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
-          <Icon size={24} className="text-primary" />
+        <div
+          className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4"
+          aria-hidden="true"
+        >
+          <Icon size={24} className="text-primary" aria-hidden="true" />
         </div>
-        <h3 className="mb-2">{title}</h3>
+        <h3 className="mb-2 text-foreground">{title}</h3>
         <p className="mb-5">{description}</p>
-        <ul className="space-y-2 mb-6">
+        <ul className="space-y-2 mb-6" aria-label={`${title} features`}>
           {features.map(f => (
             <li key={f} className="flex items-center gap-2 text-sm">
-              <CheckCircle2 size={15} className="text-primary shrink-0" />
+              <CheckCircle2 size={15} className="text-primary shrink-0" aria-hidden="true" />
               {f}
             </li>
           ))}

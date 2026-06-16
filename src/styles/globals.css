@@ -4,6 +4,12 @@ body {
   margin: 0;
   font-family: 'Inter', sans-serif;
 }
+
+section {
+  content-visibility: auto;
+  contain-intrinsic-size: 1000px;
+}
+
 #root {
   height: 100%;
 }

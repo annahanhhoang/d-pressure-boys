@@ -82,7 +82,11 @@ export function Services() {
           />
         </div>
 
-        <div className="mt-10 flex flex-wrap justify-center gap-4">
+        <div
+          className="mt-10 flex flex-wrap justify-center gap-4"
+          role="list"
+          aria-label="Service details"
+        >
           {chips.map(chip => (
             <Chip
               key={chip.text}
@@ -92,6 +96,7 @@ export function Services() {
               borderColor="border-border"
               iconColor="text-primary"
               textColor="text-muted-foreground"
+              role="listitem"
             />
           ))}
         </div>

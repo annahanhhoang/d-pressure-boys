@@ -10,6 +10,7 @@ interface ChipProps {
   textColor?: string;
   iconColor?: string;
   className?: string;
+  role?: string;
 }
 
 export function Chip({
@@ -20,12 +21,14 @@ export function Chip({
   borderColor,
   textColor,
   iconColor,
+  role,
 }: ChipProps) {
   return (
     <div
-      className={`flex items-center gap-2 rounded-full font-semibold tracking-widest uppercase text-xs px-4 py-1.5 ${bgColor ?? 'bg-primary/10'} ${borderColor ?? 'border-bg-primary/20'} ${textColor ?? 'text-primary'} ${className ?? ''}`}
+      role={role}
+      className={`flex items-center gap-2 rounded-full font-semibold tracking-widest uppercase text-xs px-4 py-1.5 ${bgColor ?? 'bg-accent/15'} ${borderColor ?? 'border-bg-accent/35'} ${textColor ?? 'text-accent'} ${className ?? ''}`}
     >
-      <Icon size={14} strokeWidth={2.5} className={iconColor ?? textColor} />
+      <Icon size={14} strokeWidth={2.5} className={iconColor ?? textColor} aria-hidden="true" />
       {label}
     </div>
   );

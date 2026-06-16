@@ -9,9 +9,33 @@
       content="Professional pressure washing for homes, businesses, cars, and trash cans in McKinney, TX (75069 & 75070). Student-owned, reliable, and affordable. Call 657-342-9683."
     />
     <meta name="robots" content="noindex, nofollow" />
+
+    <!-- Preconnect to Google Fonts for faster font loading (WCAG 1.4.12 / performance) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Preconnect to Unsplash for faster image loading (WCAG 1.4.12 / performance) -->
+    <link rel="preconnect" href="https://images.unsplash.com" />
+
+    <!-- Preload hero image to reduce LCP -->
+    <link
+      rel="preload"
+      as="image"
+      href="https://images.unsplash.com/photo-1592365559101-19adfefdf294?crop=entropy&cs=tinysrgb&fit=max&fm=webp&w=1600&q=80"
+      fetchpriority="high"
+    />
+
+    <!-- Cache-Control hint for browsers that support meta http-equiv -->
+    <meta http-equiv="Cache-Control" content="public, max-age=86400" />
   </head>
 
   <body>
+    <!-- Skip navigation link (WCAG 2.4.1 AAA) -->
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
