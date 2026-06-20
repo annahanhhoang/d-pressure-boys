@@ -1,7 +1,7 @@
 import { Star, Award, Heart } from 'lucide-react';
 import { Chip } from '@/app/components/Chip';
 import ImageWithFallback from '@/app/components/ImageWithFallback';
-import ownersPhoto from '@/assets/owners-photo.webp';
+import ownersPhoto from '@/assets/images/owners-photo.webp';
 
 export function About() {
   const values = [

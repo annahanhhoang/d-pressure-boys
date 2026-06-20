@@ -1,15 +1,20 @@
-import { Droplets } from "lucide-react";
+import ImageWithFallback from '@/app/components/ImageWithFallback';
+import logo from '@/assets/images/logo.svg';
 
 export function Logo() {
-
   return (
-    <button aria-label="home" className="cursor-pointer flex items-center gap-4 text-decoration-none">
-      <div className="w-[38px] h-[38px] bg-primary flex items-center justify-center rounded-full">
-        <Droplets size={20} strokeWidth={2.5} />
+    <a href="/" aria-label="logo">
+      <div className="flex items-center justify-center">
+        <ImageWithFallback
+          src={logo}
+          alt="D Pressure Boys Logo"
+          width={64}
+          height={64}
+          loading="eager"
+          fetchPriority="high"
+          decoding="sync"
+        />
       </div>
-      <span className="text-barlow font-extrabold text-xl tracking-wider leading-none">
-        D PRESSURE BOYS
-      </span>
-    </button>
+    </a>
   );
 }

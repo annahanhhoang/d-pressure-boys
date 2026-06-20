@@ -25,7 +25,7 @@ export function Navbar({ dark, onToggleTheme }: NavbarProps) {
     <header className="fixed top-0 inset-x-0 z-50 bg-background/90 backdrop-blur-md border-b border-border">
       <nav
         aria-label="Main navigation"
-        className="max-w-6xl mx-auto px-5 h-16 flex items-center justify-between"
+        className="max-w-6xl mx-auto px-5 h-24 flex items-center justify-between"
       >
         <Logo />
         <div className="hidden md:flex items-center gap-8">
@@ -78,11 +78,7 @@ export function Navbar({ dark, onToggleTheme }: NavbarProps) {
             aria-controls="mobile-menu"
             className="w-9 h-9 flex items-center justify-center"
           >
-            {menuOpen ? (
-              <X size={20} aria-hidden="true" />
-            ) : (
-              <Menu size={20} aria-hidden="true" />
-            )}
+            {menuOpen ? <X size={20} aria-hidden="true" /> : <Menu size={20} aria-hidden="true" />}
           </button>
         </div>
       </nav>
