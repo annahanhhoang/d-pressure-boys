@@ -62,7 +62,7 @@ export function Services() {
             imgAlt="Car wash service close up"
             icon={Car}
             title="Car Wash"
-            description="Full exterior pressure wash that blasts away grime, road salt, and dirt — leaving your car looking showroom fresh."
+            description="Full exterior wash that blasts away grime, road salt, and dirt - leaving your car looking showroom fresh."
             features={carFeatures}
             pricing="$40"
             unit="per car"

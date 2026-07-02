@@ -8,7 +8,10 @@ export function Footer() {
         <p>© {new Date().getFullYear()} D Pressure Boys</p>
 
         {/* Contact info */}
-        <nav aria-label="Contact links" className="flex items-center flex-wrap gap-6 text-sm font-medium">
+        <nav
+          aria-label="Contact links"
+          className="flex items-center flex-wrap gap-6 text-sm font-medium"
+        >
           <a
             href="tel:6573429683"
             className="flex items-center gap-2 text-primary hover:underline"
@@ -35,7 +38,7 @@ export function Footer() {
 
         {/* Attribution */}
         <p className="font-medium text-sm">
-          Website by{' '}
+          Website made by{' '}
           <a
             href="https://annahoang.dev"
             target="_blank"
